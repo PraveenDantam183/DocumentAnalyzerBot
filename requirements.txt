@@ -5,3 +5,6 @@ langchain-community
 openai
 faiss-cpu
 tiktoken
+python-docx
+pytesseract
+Pillow
