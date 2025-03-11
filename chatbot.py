@@ -113,10 +113,10 @@ if st.session_state.vector_store and st.session_state.llm:
         for i, entry in enumerate(st.session_state.chat_history):
             st.markdown(f"""
                 <div style='background-color: #2a2a2a; padding: 10px; border-radius: 5px; margin-bottom: 10px;'>
-                    <strong style='color: #4CAF50;'>Q{i+1}:</strong> {entry['question']}
+                    <strong style='color: #4CAF50;'>Q{i+1}:</strong> <span style='color: #ffffff;'>{entry['question']}</span>
                 </div>
                 <div style='background-color: #3a3a3a; padding: 10px; border-radius: 5px; margin-bottom: 10px;'>
-                    <strong style='color: #4CAF50;'>A{i+1}:</strong> {entry['answer']}
+                    <strong style='color: #4CAF50;'>A{i+1}:</strong> <span style='color: #ffffff;'>{entry['answer']}</span>
                 </div>
             """, unsafe_allow_html=True)
 
@@ -166,6 +166,10 @@ st.markdown("""
         padding: 10px;
         background-color: #1a1a1a;
         border-radius: 5px;
+    }
+    /* Ensure uploaded file name is visible */
+    .stFileUploader label > div > div > span {
+        color: #ffffff !important;
     }
     </style>
 """, unsafe_allow_html=True)
